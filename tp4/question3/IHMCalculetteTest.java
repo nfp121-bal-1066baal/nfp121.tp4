@@ -59,15 +59,15 @@ public class IHMCalculetteTest extends junit.framework.TestCase{
         try{
             Container panel = f.getContentPane();
             Component[] components = panel.getComponents();
-            assertEquals(" ce n'est pas l'IHM attendue ?", 2, components.length);
+            assertEquals(" ce n'est pas l'IHM attendue ?", 3, components.length);
 
             // la bonne IHM
             assertTrue(components[0] instanceof JPanel);
             Component[] vue = ((JPanel)components[0]).getComponents();
             JLabel etatPile = ((JLabel)vue[0]);
 
-            assertTrue(components[1] instanceof JPanel);
-            Component[] controle = ((JPanel)components[1]).getComponents();
+            assertTrue(components[2] instanceof JPanel);
+            Component[] controle = ((JPanel)components[2]).getComponents();
             assertEquals(" ce n'est pas l'IHM attendue ?", 2, controle.length);
 
             assertTrue(" ce n'est pas l'IHM attendue ?", controle[0] instanceof JTextField);
@@ -97,15 +97,15 @@ public class IHMCalculetteTest extends junit.framework.TestCase{
         try{
             Container panel = f.getContentPane();
             Component[] components = panel.getComponents();
-            assertEquals(" ce n'est pas l'IHM attendue ?", 2, components.length);
+            assertEquals(" ce n'est pas l'IHM attendue ?", 3, components.length);
 
             // la bonne IHM
             assertTrue(components[0] instanceof JPanel);
             Component[] vue = ((JPanel)components[0]).getComponents();
             JLabel etatPile = ((JLabel)vue[0]);
 
-            assertTrue(components[1] instanceof JPanel);
-            Component[] controle = ((JPanel)components[1]).getComponents();
+            assertTrue(components[2] instanceof JPanel);
+            Component[] controle = ((JPanel)components[2]).getComponents();
             assertEquals(" ce n'est pas l'IHM attendue ?", 2, controle.length);
 
             assertTrue(" ce n'est pas l'IHM attendue ?", controle[0] instanceof JTextField);
@@ -132,15 +132,15 @@ public class IHMCalculetteTest extends junit.framework.TestCase{
         try{
             Container panel = f.getContentPane();
             Component[] components = panel.getComponents();
-            assertEquals(" ce n'est pas l'IHM attendue ?", 2, components.length);
+            assertEquals(" ce n'est pas l'IHM attendue ?", 3, components.length);
 
             // la bonne IHM
             assertTrue(" ce n'est pas l'IHM attendue ?", components[0] instanceof JPanel);
             Component[] vue = ((JPanel)components[0]).getComponents();
             JLabel etatPile = ((JLabel)vue[0]);
 
-            assertTrue(" ce n'est pas l'IHM attendue ?", components[1] instanceof JPanel);
-            Component[] controle = ((JPanel)components[1]).getComponents();
+            assertTrue(" ce n'est pas l'IHM attendue ?", components[2] instanceof JPanel);
+            Component[] controle = ((JPanel)components[2]).getComponents();
             assertEquals(" ce n'est pas l'IHM attendue ?", 2, controle.length);
 
             assertTrue(controle[0] instanceof JTextField);
@@ -168,15 +168,15 @@ public class IHMCalculetteTest extends junit.framework.TestCase{
         try{
             Container panel = f.getContentPane();
             Component[] components = panel.getComponents();
-            assertEquals(" ce n'est pas l'IHM attendue ?", 2, components.length);
+            assertEquals(" ce n'est pas l'IHM attendue ?", 3, components.length);
 
             // la bonne IHM
             assertTrue(" ce n'est pas l'IHM attendue ?", components[0] instanceof JPanel);
             Component[] vue = ((JPanel)components[0]).getComponents();
             JLabel etatPile = ((JLabel)vue[0]);
 
-            assertTrue(" ce n'est pas l'IHM attendue ?", components[1] instanceof JPanel);
-            Component[] controle = ((JPanel)components[1]).getComponents();
+            assertTrue(" ce n'est pas l'IHM attendue ?", components[2] instanceof JPanel);
+            Component[] controle = ((JPanel)components[2]).getComponents();
             assertEquals(" ce n'est pas l'IHM attendue ?", 2, controle.length);
 
             assertTrue(" ce n'est pas l'IHM attendue ?", controle[0] instanceof JTextField);
@@ -202,7 +202,7 @@ public class IHMCalculetteTest extends junit.framework.TestCase{
     private void empiler(String str) throws Exception{
         Container panel = f.getContentPane();
         Component[] components = panel.getComponents();
-        Component[] controle = ((JPanel)components[1]).getComponents();
+        Component[] controle = ((JPanel)components[2]).getComponents();
         Component[] subComponents = ((JPanel)controle[1]).getComponents();
 
         Point location = controle[0].getLocationOnScreen();
@@ -216,7 +216,7 @@ public class IHMCalculetteTest extends junit.framework.TestCase{
     private String add(){
         Container panel = f.getContentPane();
         Component[] components = panel.getComponents();
-        Component[] controle = ((JPanel)components[1]).getComponents();
+        Component[] controle = ((JPanel)components[2]).getComponents();
         Component[] subComponents = ((JPanel)controle[1]).getComponents();
         Component[] vue = ((JPanel)components[0]).getComponents();
         JLabel etatPile = ((JLabel)vue[0]);
@@ -231,7 +231,7 @@ public class IHMCalculetteTest extends junit.framework.TestCase{
     private String sub(){
         Container panel = f.getContentPane();
         Component[] components = panel.getComponents();
-        Component[] controle = ((JPanel)components[1]).getComponents();
+        Component[] controle = ((JPanel)components[2]).getComponents();
         Component[] subComponents = ((JPanel)controle[1]).getComponents();
         Component[] vue = ((JPanel)components[0]).getComponents();
         JLabel etatPile = ((JLabel)vue[0]);
@@ -250,60 +250,59 @@ public class IHMCalculetteTest extends junit.framework.TestCase{
 
             if(array[i]>='a'&&array[i]<='z'){
                 robot.keyPress((int)array[i]-(int)'a'+65);
-                robot.delay(10);
+                robot.delay(100);
                 robot.keyRelease((int)array[i]-(int)'a'+65);
             }else if(array[i]==' '){
                 robot.keyPress(KeyEvent.VK_SPACE);
-                robot.delay(10);
+                robot.delay(100);
                 robot.keyRelease(KeyEvent.VK_SPACE);
             }else if(array[i]=='-'){
                 robot.keyPress(KeyEvent.VK_SUBTRACT);
-                robot.delay(10);
+                robot.delay(100);
                 robot.keyRelease(KeyEvent.VK_SUBTRACT);
             }else if(array[i]=='+'){
                 robot.keyPress(KeyEvent.VK_ADD);
-                robot.delay(10);
+                robot.delay(100);
                 robot.keyRelease(KeyEvent.VK_ADD);
             }else if(array[i]>='A'&&array[i]<='Z'){
-                robot.keyPress(KeyEvent.VK_SHIFT);
+               
                 robot.keyPress((int)array[i]-(int)'A'+65);
-                robot.delay(10);
+                robot.delay(100);
                 robot.keyRelease((int)array[i]-(int)'A'+65);
-                robot.delay(10);
-                robot.keyRelease(KeyEvent.VK_SHIFT);
+                robot.delay(100);
+                
             }else if(array[i]>='0'&&array[i]<='9'){
-                robot.keyPress(KeyEvent.VK_SHIFT);
-                robot.delay(10);
+                
                 robot.keyPress(KeyEvent.VK_0+(int)(array[i]-'0'));
-                robot.delay(10);
+                robot.delay(100);
                 robot.keyRelease(KeyEvent.VK_0+(int)(array[i]-'0'));
-                robot.delay(10);
-                robot.keyRelease(KeyEvent.VK_SHIFT);
+                robot.delay(100);
+                
             }
-            robot.delay(10);
+            robot.delay(100);
         }
     }
 
     public void mouseMoveAndClick(int x, int y){
         robot.mouseMove( x,y);
-        robot.delay(20);
+        robot.delay(100);
         robot.mousePress(InputEvent.BUTTON1_MASK);
-        robot.delay(20);
+        robot.delay(100);
         robot.mouseRelease(InputEvent.BUTTON1_MASK);
-        robot.delay(20);
+        robot.delay(100);
     }//end mouseMoveAndClick
 
     public void mouseMoveAndClickClick(int x, int y){
         robot.mouseMove( x,y);
-        robot.delay(10);
+        robot.delay(100);
         robot.mousePress(InputEvent.BUTTON1_MASK);
-        robot.delay(10);
+        robot.delay(100);
         robot.mouseRelease(InputEvent.BUTTON1_MASK);
         robot.delay(100);
         robot.mousePress(InputEvent.BUTTON1_MASK);
-        robot.delay(10);
+        robot.delay(100);
         robot.mouseRelease(InputEvent.BUTTON1_MASK);
-        robot.delay(10);
+        robot.delay(100);
     }//end mouseMoveAndClickClick
 
   

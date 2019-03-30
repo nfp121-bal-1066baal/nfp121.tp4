@@ -18,7 +18,7 @@ public class IHMQuestion2_1Test extends junit.framework.TestCase
         try{  
             Class.forName("question2.IHMQuestion2_1");
             Class.forName("question2.JButtonObserver");
-            //Class.forName("question2.JMouseObserver");
+            Class.forName("question2.JMouseObserver");
         }catch(ClassNotFoundException e){
             fail("classe absente " + e.getMessage());
         }
@@ -43,6 +43,7 @@ public class IHMQuestion2_1Test extends junit.framework.TestCase
 
     protected void tearDown(){ // throws java.lang.Exception
         f.dispose();
+        
     }
 
     public void test_clic_bouton_A() throws Exception{
@@ -115,11 +116,11 @@ public class IHMQuestion2_1Test extends junit.framework.TestCase
     public void mouseMoveAndClick(int x, int y){
         robot.mouseMove( x,y);
 
-        robot.delay(60);
+        robot.delay(100);
         robot.mousePress(InputEvent.BUTTON1_MASK);
-        robot.delay(60);
+        robot.delay(100);
         robot.mouseRelease(InputEvent.BUTTON1_MASK);
-        robot.delay(60);
+        robot.delay(100);
     }//end mouseMoveAndClick
 
 }

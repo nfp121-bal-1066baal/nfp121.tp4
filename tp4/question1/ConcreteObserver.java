@@ -29,6 +29,7 @@ public class ConcreteObserver implements Observer {
 	public void update(Observable observable, Object arg) {
 		senders.push(observable);
 		arguments.push(arg);
+		observable.addObserver(this);
 	}
 
 	public Stack<Observable> senders() {
